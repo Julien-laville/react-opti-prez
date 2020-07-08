@@ -1,0 +1,11 @@
+const added = Object.entries(this.props).filter(([key, val]) => {
+  if (prevProps[key] === undefined) return true;
+  if (prevProps[key] !== val) {
+    console.log(`${key}
+          - ${JSON.stringify(val)}
+          + ${JSON.stringify(prevProps[key])}`);
+  }
+  return false;
+});
+added.forEach(([key, val]) => console.log(`${key}
+          + ${JSON.stringify(val)}`));
